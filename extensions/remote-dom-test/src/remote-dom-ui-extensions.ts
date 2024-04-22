@@ -16,23 +16,43 @@ import type {
 
 // Remote DOM expects you to define custom elements to represent UI
 // components, so we define a minimal subset of those components here.
+const Button = createRemoteElement({
+  properties: {
+    onPress: { event: true },
+  },
+});
+
 const Banner = createRemoteElement({
   properties: {
     title: { type: String },
   },
 });
 
+const BlockStack = createRemoteElement({
+  properties: {
+    spacing: { type: String },
+  },
+});
+
 customElements.define("remote-root", RemoteRootElement);
+customElements.define("ui-button", Button);
 customElements.define("ui-banner", Banner);
+customElements.define("ui-block-stack", BlockStack);
 
 declare global {
   interface HTMLElementTagNameMap {
     "remote-root": InstanceType<typeof RemoteRootElement>;
+    "ui-button": InstanceType<typeof Button>;
     "ui-banner": InstanceType<typeof Banner>;
+    "ui-block-stack": InstanceType<typeof BlockStack>;
   }
 }
 
-const ELEMENT_MAPPING = new Map<string, string>([["ui-banner", "Banner"]]);
+const ELEMENT_MAPPING = new Map<string, string>([
+  ["ui-button", "Button"],
+  ["ui-banner", "Banner"],
+  ["ui-block-stack", "BlockStack"],
+]);
 
 export function extension<Target extends ExtensionTarget>(
   target: Target,

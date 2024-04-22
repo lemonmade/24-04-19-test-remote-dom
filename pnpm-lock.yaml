@@ -93,9 +93,12 @@ importers:
 
   extensions/remote-dom-test:
     dependencies:
+      '@preact/signals':
+        specifier: ^1.2.3
+        version: 1.2.3(preact@10.20.2)
       '@remote-dom/core':
         specifier: ^1.0.0
-        version: 1.0.0(preact@10.20.2)
+        version: 1.0.0(@preact/signals-core@1.6.0)(preact@10.20.2)
       '@shopify/ui-extensions':
         specifier: 2024.4.x
         version: 2024.4.1
@@ -1257,6 +1260,14 @@ packages:
   '@pkgjs/parseargs@0.11.0':
     resolution: {integrity: sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==}
     engines: {node: '>=14'}
+
+  '@preact/signals-core@1.6.0':
+    resolution: {integrity: sha512-O/XGxwP85h1F7+ouqTMOIZ3+V1whfaV9ToIVcuyGriD4JkSD00cQo54BKdqjvBJxbenvp7ynfqRHEwI6e+NIhw==}
+
+  '@preact/signals@1.2.3':
+    resolution: {integrity: sha512-M2DXse3Wi8HwjI1d2vQWOLJ3lHogvqTsJYvl4ofXRXgMFQzJ7kmlZvlt5i8x5S5VwgZu0ghru4HkLqOoFfU2JQ==}
+    peerDependencies:
+      preact: 10.x
 
   '@prisma/client@5.12.1':
     resolution: {integrity: sha512-6/JnizEdlSBxDIdiLbrBdMW5NqDxOmhXAJaNXiPpgzAPr/nLZResT6MMpbOHLo5yAbQ1Vv5UU8PTPRzb0WIxdA==}
@@ -6165,6 +6176,13 @@ snapshots:
   '@pkgjs/parseargs@0.11.0':
     optional: true
 
+  '@preact/signals-core@1.6.0': {}
+
+  '@preact/signals@1.2.3(preact@10.20.2)':
+    dependencies:
+      '@preact/signals-core': 1.6.0
+      preact: 10.20.2
+
   '@prisma/client@5.12.1(prisma@5.12.1)':
     optionalDependencies:
       prisma: 5.12.1
@@ -6378,11 +6396,12 @@ snapshots:
     dependencies:
       web-streams-polyfill: 3.3.3
 
-  '@remote-dom/core@1.0.0(preact@10.20.2)':
+  '@remote-dom/core@1.0.0(@preact/signals-core@1.6.0)(preact@10.20.2)':
     dependencies:
       '@remote-dom/polyfill': 1.0.1
       htm: 3.1.1
     optionalDependencies:
+      '@preact/signals-core': 1.6.0
       preact: 10.20.2
 
   '@remote-dom/polyfill@1.0.1': {}

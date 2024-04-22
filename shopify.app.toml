@@ -3,7 +3,7 @@
 client_id = "e9fa874ffa470da747420f23c2ea4f03"
 name = "24-04-19-test-remote-dom"
 handle = "24-04-19-test-remote-dom"
-application_url = "https://fioricet-fits-mass-trim.trycloudflare.com"
+application_url = "https://bow-wars-administration-universal.trycloudflare.com"
 embedded = true
 
 [build]
@@ -17,9 +17,9 @@ scopes = "write_products"
 
 [auth]
 redirect_urls = [
-  "https://fioricet-fits-mass-trim.trycloudflare.com/auth/callback",
-  "https://fioricet-fits-mass-trim.trycloudflare.com/auth/shopify/callback",
-  "https://fioricet-fits-mass-trim.trycloudflare.com/api/auth/callback"
+  "https://bow-wars-administration-universal.trycloudflare.com/auth/callback",
+  "https://bow-wars-administration-universal.trycloudflare.com/auth/shopify/callback",
+  "https://bow-wars-administration-universal.trycloudflare.com/api/auth/callback"
 ]
 
 [webhooks]

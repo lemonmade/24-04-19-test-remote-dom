@@ -4,6 +4,7 @@
   "version": "1.0.0",
   "license": "UNLICENSED",
   "dependencies": {
+    "@preact/signals": "^1.2.3",
     "@shopify/ui-extensions": "2024.4.x",
     "@remote-dom/core": "^1.0.0",
     "preact": "^10.20.2"
